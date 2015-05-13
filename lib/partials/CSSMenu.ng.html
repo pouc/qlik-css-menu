@@ -1,0 +1,9 @@
+<div qv-extension class='qv-object-CSSMenu-cssmenu'>
+  <ul>
+    <li
+        ng-repeat="sheet in sheets"
+        qva-activate="gotoSheet('{{sheet.qInfo.qId}}');"
+        ng-class="{selected: sheet.qInfo.qId==curSheetId}"
+        >{{sheet.qMeta.title}}</li>
+  </ul>
+</div>
