@@ -33,6 +33,14 @@ You can also select colors using the picker and change alignement options.
 
 If you want you can set an action to be executed before navigating to a sheet.
 
+# Support
+
+This project is not built by Qlik and thus won't be supported by Qlik.
+
+This code was built as a challenge and a POC. It uses a lot of unsupported calls to functions and APIs that are NOT SUPPORTED and NOT DOCUMENTED. Use at your own risks! This code has not been developped, tested nor validated by anyone in Qlik's R&D. It is very likely that it will at some point stop working at all at best and break your Qlik Sense installation at worst.
+
+DO NOT USE IN PRODUCTION. DO NOT USE IN DEMO IF YOU ARE A QLIK PRESALES.
+
 # Credits
 
 This extension is inspired by the swr-sheetnavigation extension of Stefan Walther
