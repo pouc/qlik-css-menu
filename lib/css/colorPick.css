@@ -1,0 +1,305 @@
+/*  evol.colorpicker = ColorPicker widget for jQuery UI  */
+/*  (c) 2014 Olivier Giulieri  */
+/*  https://github.com/evoluteur/colorpicker */
+.evo-pop {
+  z-index: 10000;
+  width: 204px;
+  padding: 3px 3px 0;
+}
+.evo-pop-ie {
+  z-index: 10000;
+  width: 212px;
+  padding: 3px;
+}
+.evo-palette td {
+  font-size: 1px;
+  border: solid 1px #c0c0c0;
+  padding: 7px;
+  cursor: pointer;
+}
+.evo-palette tr.top > td {
+  border-bottom: 0;
+}
+.evo-palette tr.in > td {
+  border-top: 0;
+  border-bottom: 0;
+}
+.evo-palette tr.bottom > td {
+  border-top: 0;
+}
+.evo-palette div.sep {
+  height: 3px;
+}
+.evo-palette,
+.evo-palette-ie {
+  border-collapse: separate;
+  border-spacing: 4px 0px;
+  *border-collapse: expression('separate', cellSpacing='2px');
+}
+.evo-palette th,
+.evo-palette-ie th {
+  border: 0;
+  padding: 5px 3px;
+  text-align: left;
+  font-weight: normal;
+  background: transparent !important;
+}
+.evo-palette-ie td {
+  font-size: 1px;
+  border: solid 1px #c0c0c0;
+  padding: 7px;
+  cursor: pointer;
+}
+.evo-palette2,
+.evo-palette2-ie {
+  margin: auto;
+  width: initial;
+  border-collapse: collapse;
+}
+.evo-palette2 td,
+.evo-palette2-ie td {
+  font-size: 1px;
+  cursor: pointer;
+}
+.evo-palette2 td {
+  padding: 6px 7px;
+}
+.evo-palette2-ie td {
+  padding: 5px;
+}
+.evo-palcenter {
+  padding: 5px;
+  text-align: center;
+}
+.evo-colorind,
+.evo-colorind-ie,
+.evo-colorind-ff {
+  border: solid 1px #c3c3c3;
+  width: 18px;
+  height: 18px;
+  float: right;
+}
+.evo-colorind-ie {
+  position: relative;
+  top: -23px;
+}
+.evo-colorbox-ie {
+  font-size: 8px;
+  padding: 3px 9px !important;
+}
+/*
+.evo-colortxt-ie {
+	position:relative;
+	top:-6px;
+}*/
+.evo-pop:after,
+.evo-pop-ie:after,
+.evo-colorind:after,
+.evo-colorind-ie:after,
+.evo-colorind-ff:after,
+.evo-color span:after,
+.evo-cHist:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+}
+.evo-color {
+  width: 94px;
+  padding: 1px 3px 0 4px;
+}
+.evo-color div {
+  border: solid 1px #808080;
+  border-right: solid 1px #c0c0c0;
+  border-bottom: solid 1px #c0c0c0;
+  padding: 3px;
+  margin-bottom: 5px;
+  width: 10px;
+  height: 10px;
+  float: left;
+}
+.evo-color span {
+  font-size: 15px;
+  margin: 1px 0 4px 3px;
+  float: left;
+}
+.evo-sep {
+  height: 10px;
+  font-size: 0;
+}
+.evo-more {
+  padding: 4px 5px 4px;
+  font-size: smaller;
+}
+.evo-cHist {
+  padding: 3px;
+}
+.evo-cHist div {
+  cursor: pointer;
+  border: solid 1px #c0c0c0;
+  padding: 3px;
+  margin: 5px;
+  width: 10px;
+  height: 10px;
+  float: left;
+}
+.evo-transparent {
+  background-image: repeating-linear-gradient(135deg, #000000, #000000 1px, #ffffff 1px, #ffffff 3px);
+}
+.evo-tr-box {
+  cursor: pointer;
+  border: solid 1px #c0c0c0;
+  padding: 3px;
+  width: 7px;
+  height: 7px;
+  float: right;
+  position: relative;
+  right: -3px;
+  top: 2px;
+}
+a.evo-hist {
+  margin-left: 6px;
+}
+.evo-pointer {
+  cursor: pointer;
+}
+.evo-hidden-button {
+  display: none;
+}
+
+.ui-evo-widget {
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 1.1em;
+}
+.ui-evo-widget .ui-evo-widget {
+	font-size: 1em;
+}
+.ui-evo-widget input,
+.ui-evo-widget select,
+.ui-evo-widget textarea,
+.ui-evo-widget button {
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 1em;
+}
+
+.ui-evo-widget-content {
+	border: 1px solid #aaaaaa;
+	background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+	color: #222222;
+}
+.ui-evo-widget-content a {
+	color: #222222;
+}
+
+.ui-evo-state-default,
+.ui-evo-widget-content .ui-evo-state-default,
+.ui-evo-widget-header .ui-evo-state-default {
+	border: 1px solid #d3d3d3;
+	background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #555555;
+}
+
+.ui-evo-state-hover,
+.ui-evo-widget-content .ui-evo-state-hover,
+.ui-evo-widget-header .ui-evo-state-hover,
+.ui-evo-state-focus,
+.ui-evo-widget-content .ui-evo-state-focus,
+.ui-evo-widget-header .ui-evo-state-focus {
+	border: 1px solid #999999;
+	background: #dadada url(images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #212121;
+}
+
+.ui-evo-state-active,
+.ui-evo-widget-content .ui-evo-state-active,
+.ui-evo-widget-header .ui-evo-state-active {
+	border: 1px solid #aaaaaa;
+	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #212121;
+}
+
+.ui-evo-state-highlight,
+.ui-evo-widget-content .ui-evo-state-highlight,
+.ui-evo-widget-header .ui-evo-state-highlight {
+	border: 1px solid #fcefa1;
+	background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
+	color: #363636;
+}
+
+.ui-evo-state-highlight a,
+.ui-evo-widget-content .ui-evo-state-highlight a,
+.ui-evo-widget-header .ui-evo-state-highlight a {
+	color: #363636;
+}
+.ui-evo-state-error,
+.ui-evo-widget-content .ui-evo-state-error,
+.ui-evo-widget-header .ui-evo-state-error {
+	border: 1px solid #cd0a0a;
+	background: #fef1ec url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
+	color: #cd0a0a;
+}
+
+.ui-evo-state-error a,
+.ui-evo-widget-content .ui-evo-state-error a,
+.ui-evo-widget-header .ui-evo-state-error a {
+	color: #cd0a0a;
+}
+.ui-evo-state-error-text,
+.ui-evo-widget-content .ui-evo-state-error-text,
+.ui-evo-widget-header .ui-evo-state-error-text {
+	color: #cd0a0a;
+}
+.ui-evo-priority-primary,
+.ui-evo-widget-content .ui-evo-priority-primary,
+.ui-evo-widget-header .ui-evo-priority-primary {
+	font-weight: bold;
+}
+.ui-evo-priority-secondary,
+.ui-evo-widget-content .ui-evo-priority-secondary,
+.ui-evo-widget-header .ui-evo-priority-secondary {
+	opacity: .7;
+	filter:Alpha(Opacity=70);
+	font-weight: normal;
+}
+.ui-evo-state-disabled,
+.ui-evo-widget-content .ui-evo-state-disabled,
+.ui-evo-widget-header .ui-evo-state-disabled {
+	opacity: .35;
+	filter:Alpha(Opacity=35);
+	background-image: none;
+}
+
+.ui-evo-icon,
+.ui-evo-widget-content .ui-evo-icon {
+	background-image: url(images/ui-icons_222222_256x240.png);
+}
+
+.ui-evo-corner-all,
+.ui-evo-corner-top,
+.ui-evo-corner-left,
+.ui-evo-corner-tl {
+	border-top-left-radius: 4px;
+}
+.ui-evo-corner-all,
+.ui-evo-corner-top,
+.ui-evo-corner-right,
+.ui-evo-corner-tr {
+	border-top-right-radius: 4px;
+}
+.ui-evo-corner-all,
+.ui-evo-corner-bottom,
+.ui-evo-corner-left,
+.ui-evo-corner-bl {
+	border-bottom-left-radius: 4px;
+}
+.ui-evo-corner-all,
+.ui-evo-corner-bottom,
+.ui-evo-corner-right,
+.ui-evo-corner-br {
+	border-bottom-right-radius: 4px;
+}

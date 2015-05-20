@@ -1,9 +1,30 @@
 <div qv-extension class='qv-object-CSSMenu-cssmenu'>
-  <ul>
+  <ul class='qv-object-CSSMenu-menu'>
     <li
-        ng-repeat="sheet in sheets"
-        qva-activate="gotoSheet('{{sheet.qInfo.qId}}');"
-        ng-class="{selected: sheet.qInfo.qId==curSheetId}"
-        >{{sheet.qMeta.title}}</li>
+        ng-repeat-start="cat in flattenedSheets"
+        ng-if="cat.hasSub"
+        ng-class="{selected: cat.selected, hasSub: cat.hasSub}"
+        >
+      <div class='qv-object-CSSMenu-text'><span>{{cat.title}}</span></div>
+      <div class='qv-object-CSSMenu-subWrap'>
+        <div>
+          <ul class='qv-object-CSSMenu-subMenu'>
+            <li
+                ng-repeat="sheet in cat.sub"
+                qva-activate="gotoSheet('{{sheet.id}}');"
+                ng-class="{selected: sheet.selected}"
+                ><span>{{sheet.title}}</span></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li
+        ng-repeat-end
+        qva-activate="gotoSheet('{{cat.id}}');"
+        ng-class="{selected: cat.selected}"
+        ng-if="!cat.hasSub"
+        >
+      <div class='qv-object-CSSMenu-text'><span>{{cat.title}}</span></div>
+    </li>
   </ul>
 </div>

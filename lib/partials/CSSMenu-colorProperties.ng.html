@@ -1,0 +1,8 @@
+<div class="pp-component pp-colorPick-component" ng-if="visible" tcl="colorPick">
+	<div class="label" ng-if="label">{{label}}</div>
+	<div class="value" ng-class="{ 'qui-inputwithicon': isExpressionDefinition }">
+      <input type="text" maxlength="{{maxlength}}" ng-class="{ 'qui-invalid': invalid, 'qui-input': !isExpressionDefinition, 'is-expression': isLocked(), 'colorPick': true }"
+			ng-model="displayValue" pp-model-onblur pp-input-validator ng-readonly="isLocked()" ng-disabled="readOnly" ng-change="change()"
+			pp-expression-editor="value" editor-disabled="!isLocked()" expression-type="{{expressionType}}" tid="{{key}}" />
+	</div>
+</div>
