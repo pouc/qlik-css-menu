@@ -9,7 +9,7 @@ define(
     
     var o = {
       template: commonPropertiesTemplate,
-      controller: ["$scope", "$element", "$timeout", function($scope, o, p) {
+      controller: ["$scope", "$element", "$timeout", "qvContextMenu", function($scope, o, p, qvContextMenu) {
         
         var catList;
         
@@ -40,13 +40,16 @@ define(
               
               newCat = catList.createItem({
                 component: components.getComponent("items"),
-                definition: $scope.definition.catDef,
+                definition: {
+					type: "items",
+					items: $scope.definition.catDef
+				},
+				type: "category",
                 data: v,
                 args: $scope.args,
                 id: v.id,
                 sortable: true,
                 index: 0,
-                type: "category",
                 templateSrc: "pp-sorting-item.ng.html",
                 title: function() {
                   return v.catName;
@@ -58,13 +61,16 @@ define(
              
               newCat = catList.createItem({
                 component: components.getComponent("items"),
-                definition: $scope.definition.catDef,
+                definition: {
+					type: "items",
+					items: $scope.definition.catDef
+				},
+				type: "category",
                 data: v,
                 args: $scope.args,
                 id: v.id,
                 sortable: true,
                 index: 0,
-                type: "category",
                 templateSrc: "pp-data-item.ng.html",
                 title: function() {
                   return v.catName;
@@ -175,7 +181,7 @@ define(
         
         var contextMenu;
         $scope.openContextMenu = function(a, b) {
-          var c = context.menu();
+          var c = qvContextMenu.menu();
           
           c.addItem({
             translation: "Common.Delete",
@@ -185,7 +191,7 @@ define(
             }
           });
           
-          contextMenu = context.show(c, {
+          contextMenu = qvContextMenu.show(c, {
             position: {
               x: a.pageX,
               y: a.pageY
@@ -210,7 +216,7 @@ define(
           hideAddClicked();
           contextMenu && contextMenu.destroy();
         });
-        
+
         catList = $scope.sortableItemLists.createList(1, {
           title: "Categories",
           tid: "categories2"

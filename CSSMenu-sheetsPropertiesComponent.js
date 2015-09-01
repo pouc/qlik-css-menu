@@ -9,7 +9,7 @@ define(
     
     var o = {
       template: commonPropertiesTemplate,
-      controller: ["$scope", "$element", "$timeout", function($scope, o, p) {
+      controller: ["$scope", "$element", "$timeout", "qvContextMenu", function($scope, o, p, qvContextMenu) {
         
         var catList = {};
         
@@ -142,13 +142,15 @@ define(
 
             var newSheet = catList[v.catId].createItem({
               component: components.getComponent("items"),
-              definition: $scope.definition.sheetDef,
+              definition: {
+				type: "sheet",
+				items: $scope.definition.sheetDef
+			  },
               data: v,
               args: $scope.args,
               id: v.id,
               sortable: true,
               index: v.order,
-              type: "sheet",
               templateSrc: "pp-sorting-item.ng.html",
               title: function() {
                 return (
@@ -210,7 +212,7 @@ define(
         
         var contextMenu;
         $scope.openContextMenu = function(a, b) {
-          var c = context.menu();
+          var c = qvContextMenu.menu();
           
           c.addItem({
             translation: "Common.Delete",
@@ -220,7 +222,7 @@ define(
             }
           });
           
-          contextMenu = context.show(c, {
+          contextMenu = qvContextMenu.show(c, {
             position: {
               x: a.pageX,
               y: a.pageY
