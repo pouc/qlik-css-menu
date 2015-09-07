@@ -45,3 +45,18 @@ If you want you can set an action to be executed before navigating to a sheet.
 # Credits
 
 This extension is inspired by the swr-sheetnavigation extension of Stefan Walther
+
+# Fixes
+
+This fork fixes the following issues
+
+* Allow renaming cat name
+* Allow editing cat properties
+* contex menu on right click
+* Allow editing sheet properties
+* Context menu on right click
+
+# Known Issues
+Following minor knows issues exists
+* Firts edits works, Again you have to hit "Done" and then hit Ëdit" to do any modifications
+
