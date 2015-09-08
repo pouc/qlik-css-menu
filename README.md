@@ -58,5 +58,5 @@ This fork fixes the following issues
 
 # Known Issues
 Following minor knows issues exists
-* Firts edits works, Again you have to hit "Done" and then hit Ëdit" to do any modifications
+* First edit works, Again you have to hit "Done" and then hit "Ëdit" again to do any modifications
 
