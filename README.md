@@ -55,6 +55,7 @@ This fork fixes the following issues
 * contex menu on right click
 * Allow editing sheet properties
 * Context menu on right click
+* Digest issue when having 15 or more issue (this is a big one)
 
 # Known Issues
 Following minor knows issues exists
