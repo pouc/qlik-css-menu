@@ -45,7 +45,7 @@ If you want you can set an action to be executed before navigating to a sheet.
 # Credits
 
 This extension is inspired by the swr-sheetnavigation extension of Stefan Walther.
-Thanks to ModelN for providing critical Bug fixs :
+Thanks to *ModelN* for providing critical Bug fixes :
 
 ## Fixes
 
