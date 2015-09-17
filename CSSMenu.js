@@ -77,7 +77,7 @@ define(
         
         
         
-        $scope.$watch('layout', function(newValue, oldValue){
+        $scope.$watch('layout.cats', function(newValue, oldValue){
           setCss($scope);
           $scope.flattenedSheets = flatten();
         }, true);

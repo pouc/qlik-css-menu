@@ -44,9 +44,10 @@ If you want you can set an action to be executed before navigating to a sheet.
 
 # Credits
 
-This extension is inspired by the swr-sheetnavigation extension of Stefan Walther
+This extension is inspired by the swr-sheetnavigation extension of Stefan Walther.
+Thanks to *ModelN* for providing critical Bug fixes :
 
-# Fixes
+## Fixes
 
 This fork fixes the following issues
 
@@ -55,8 +56,9 @@ This fork fixes the following issues
 * contex menu on right click
 * Allow editing sheet properties
 * Context menu on right click
+* Digest issue when having 15 or more sheets (this is a big one)
 
 # Known Issues
 Following minor knows issues exists
-* Firts edits works, Again you have to hit "Done" and then hit Ëdit" to do any modifications
+* First edit works, Again you have to hit "Done" and then hit "Ëdit" again to do any modifications
 
