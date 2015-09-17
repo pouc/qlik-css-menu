@@ -5,6 +5,12 @@ This extension for Qlik Sense displays a menu to help navigating between sheets.
 
 Just drag and drop the extension on a page and resize it. You can then create a master item and display it on every sheet of the application.
 
+# Authors
+
+- Loïc Formont (Qlik presales)
+
+- *ModelN* (https://github.com/mnadeem)
+
 # Disclaimer
 
 This project is not built by Qlik and thus won't be supported by Qlik.
@@ -45,6 +51,7 @@ If you want you can set an action to be executed before navigating to a sheet.
 # Credits
 
 This extension is inspired by the swr-sheetnavigation extension of Stefan Walther.
+
 Thanks to *ModelN* for providing critical Bug fixes :
 
 ## Fixes
